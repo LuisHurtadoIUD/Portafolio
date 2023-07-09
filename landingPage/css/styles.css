@@ -1,0 +1,194 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    /*border-style: dotted;*/
+    
+}
+
+body{
+    background: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+a{
+    text-decoration: none;
+}
+/*este es el contenedor general*/
+.padre{
+    background: #2d42b4;
+    display: grid;
+    grid-template-areas: 
+    'superior superior superior'
+    'nav nav nav'
+    'slider slider slider'
+    'cuerpo cuerpo cuerpo'
+    'publicidad publicidad publicidad'
+    'footer footer footer'
+    ;
+    column-gap: 10px;
+    align-items: center;
+    color: #941e0f;
+ }
+ /* fin contendor general*/
+
+ /*este es el contenedor de la barra superior donde va un logo del gobierno, menu y redes sociales*/
+    .superior{
+        grid-area: superior;
+        background: #67B5DD;
+        display: grid;
+        grid-template-areas: 
+        'logo logo logo'
+        'navegacion navegacion navegacion'
+        'social social social'
+        ;
+    }
+        .logo{
+            grid-area: logo;
+            width: 100%;
+        }
+        .logo img{
+            width: 10%;
+        }
+        .navegacion{
+                grid-area: navegacion;
+                background: yellowgreen;
+        }
+        .social{
+                grid-area: social;
+                background: violet;
+        }
+/* fin de la barra gobierno*/
+/*aqui inicia la parte mas propia de la página, lleva logo de la ins. menu y opciones de ingreso */
+    /*menu de navegacion de la pagina.*/        
+        .nav{
+            grid-area: nav;
+            margin: 10px;
+            align-items: center;
+        }
+        
+        .nav ul{
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .nav a{
+            color: #070346;
+            padding: 10px;
+            font-weight: bold;
+            line-height: 15px;
+        }
+        .nav a:hover{
+            color: #FB8500;
+        }
+        .menu2{
+            /*background-color: #941e0f;*/
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            align-items: center;
+        }
+            .logo{
+                background-color: #013D57;
+            }
+            .logo2 img{               
+                /*background: url(../img/logo-escudo.png);*/
+                width: 80%;
+            }
+            
+            .acceso{
+                background-color: aliceblue;
+
+            }
+    .list-submenu{
+        display: flex;
+        align-items: center;
+    }
+
+        .submenu{
+            width: 100%;
+            white-space: nowrap;
+        }
+            .button{
+                background-color: #9CB94B;
+                border: none;
+                border-radius: 20px;
+                color: #ffffff;
+                font-weight: bold;
+            }
+
+    /* eslider con informacion importante de la página*/
+    .slider{
+        grid-area: slider;
+        background: url(../img/Banner_inocuidad.jpg) center no-repeat;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover  ;
+        background-position: center;
+    }
+    /*seccion para las noticias */
+    .cuerpo{
+        grid-area: cuerpo;
+        background: #E2EAED;
+        grid-template-areas: 
+        'articulos'
+        'publicidad'
+        ;
+    }
+        .articulos{
+            grid-area: articulos;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            width: 70%;
+            max-width: 81%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+            .article{
+                border-radius: 20px;
+            }
+           
+            .article span{
+                color: #7ebae0;
+                font-weight: 100;
+                font-size: small;
+                margin-right: 20px;
+            }
+            .article a{
+                padding: 0 15px 0 15px;
+            }
+            .article img{
+                width: 100%;
+                border-radius: 10px;
+                opacity: 0.9;
+                transition: 2s;
+            }
+            .article img:hover{
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            .article .img{
+                overflow: hidden;
+            }
+    /* seccion para publicidad*/
+    .publicidad{
+        grid-area: publicidad;
+        background: lightblue;
+    }
+        .avisos{
+            background: goldenrod;
+        }
+    /*pie de la pagina*/
+    .footer{
+        grid-area: footer;
+        background-color: #013D57;
+
+    }
+        .pie{
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            height: auto;            
+        }
