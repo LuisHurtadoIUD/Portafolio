@@ -2,22 +2,20 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
-    /*border-style: dotted;*/
-    
+    /*box-sizing: content-box;
+    border-style: dotted;    */
 }
 
 body{
-    background: blue;
+    background: rgb(0, 255, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
 a{
     text-decoration: none;
 }
 /*este es el contenedor general*/
 .padre{
-    background: #2d42b4;
+    background: #fff;
     display: grid;
     grid-template-areas: 
     'superior superior superior'
@@ -27,37 +25,47 @@ a{
     'publicidad publicidad publicidad'
     'footer footer footer'
     ;
-    column-gap: 10px;
+    gap: 0 10px;
     align-items: center;
     color: #941e0f;
+    width: 100%;
  }
  /* fin contendor general*/
 
  /*este es el contenedor de la barra superior donde va un logo del gobierno, menu y redes sociales*/
-    .superior{
+    .cabecera{
         grid-area: superior;
         background: #67B5DD;
         display: grid;
-        grid-template-areas: 
-        'logo logo logo'
-        'navegacion navegacion navegacion'
-        'social social social'
-        ;
+        grid-template-columns: 1fr 3fr 2fr;
+        align-items: center;
+        color: #941e0f;
+        width: 100%;
     }
         .logo{
-            grid-area: logo;
-            width: 100%;
+            width: 80%;
+            font-size: 5px;
+            text-align: center;
         }
+        
         .logo img{
-            width: 10%;
+            object-fit: contain;
+            width: 80%;
+            height: 100%;
         }
         .navegacion{
-                grid-area: navegacion;
-                background: yellowgreen;
+            font-size: 12px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .navegacion a{
+            padding-right: 15px;
         }
         .social{
-                grid-area: social;
-                background: violet;
+            font-size: 12px;
+            text-align: right;
+            padding-right: 15px;  
+                
         }
 /* fin de la barra gobierno*/
 /*aqui inicia la parte mas propia de la página, lleva logo de la ins. menu y opciones de ingreso */
@@ -68,17 +76,10 @@ a{
             align-items: center;
         }
         
-        .nav ul{
-            display: flex;
-            list-style: none;
-            justify-content: center;
-        }
-
         .nav a{
             color: #070346;
             padding: 10px;
-            font-weight: bold;
-            line-height: 15px;
+            line-height: 5px;
         }
         .nav a:hover{
             color: #FB8500;
@@ -89,21 +90,45 @@ a{
             grid-template-columns: 1fr 3fr;
             align-items: center;
         }
-            .logo{
-                background-color: #013D57;
+            .logo2{
+                width: 80%;                
             }
             .logo2 img{               
-                /*background: url(../img/logo-escudo.png);*/
-                width: 80%;
+                width: 100%;
+            }
+            .nav2{
+                display: flex;
+                align-items: center;
+            }
+            .nav-item{
+                padding: 15px;
+                
+                display: flex;
+                list-style: none;
+                justify-content: center;
+            }
+            .nav-item a{
+                font-size: 13px;
+                padding-left: 10px;
+                text-align: center;
             }
             
-            .acceso{
-                background-color: aliceblue;
-
+            #btnMenu{
+                display: none;
+                background-color: rgb(238, 217, 30);
+                height: 100%;
+                margin-right: 15px;
+            }
+            #btnMenu i{
+                width: 15px;
+                height: 20px;
+                text-align: center;
+                padding: 5px;
             }
     .list-submenu{
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
         .submenu{
@@ -115,18 +140,22 @@ a{
                 border: none;
                 border-radius: 20px;
                 color: #ffffff;
+                font-size: 13px;
                 font-weight: bold;
+                height: 25px;
+                width: 50%;
             }
 
     /* eslider con informacion importante de la página*/
     .slider{
         grid-area: slider;
         background: url(../img/Banner_inocuidad.jpg) center no-repeat;
-        height: 600px;
+        height: 400px;
         background-repeat: no-repeat;
-        background-size: cover  ;
+        background-size: contain;
         background-position: center;
     }
+  
     /*seccion para las noticias */
     .cuerpo{
         grid-area: cuerpo;
@@ -192,3 +221,56 @@ a{
             padding: 10px;
             height: auto;            
         }
+
+@media all and (max-width: 720.9999px){
+    .superior{
+        display: none;
+    }
+    .logo2{
+        width: 100%;
+    }
+    #btnMenu{
+        width: 10%;
+        height: 20%;
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        background-color: #023D59
+    }
+    .nav2 ul{
+        display: none;
+    }
+
+    .slider{
+        
+    }
+
+}
+
+
+@media all and (max-width: 425.9999px){
+    .superior{
+        display: none;
+    }
+    .logo2{
+        width: 100%;
+    }
+    #btnMenu{
+        width: 10%;
+        height: 20%;
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        background-color: #023D59
+    }
+    .nav2 ul{
+        display: none;
+    }
+
+    .slider{
+        
+    }
+
+}
