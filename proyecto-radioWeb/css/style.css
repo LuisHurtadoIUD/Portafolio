@@ -1,0 +1,20 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+.nav{
+    background: #67b5dd;
+}
+
+.nav a{
+    color: #fff;
+}
+
+.col{
+    padding: 10px;
+}
+
+#reproductor{
+    display: none;
+}
+
+#signal{
+    color: red;
+}
